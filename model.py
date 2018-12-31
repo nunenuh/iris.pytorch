@@ -12,7 +12,7 @@ class IrisNetwork(nn.Module):
     def forward(self, input):
         x = self.linear1(input)
         x = self.relu1(x)
-        x = self.linear(x)
+        x = self.linear2(x)
         x = self.relu2(x)
         x = self.linear3(x)
         return x

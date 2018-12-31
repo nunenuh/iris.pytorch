@@ -2,6 +2,8 @@ from torch.utils import data
 from pathlib import Path
 import pandas as pd
 import numpy as np
+from pandas.api.types import CategoricalDtype
+
 
 class IrisDataset(data.Dataset):
     def __init__(
