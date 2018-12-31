@@ -9,3 +9,6 @@ def indice_splitter(dataset, valid_size, shuflle=True):
         np.random.shuffle(indices)
     train_idx, valid_idx = indices[split:], indices[:split]
     return train_idx, valid_idx
+
+def save_checkpoint():
+    pass
