@@ -1,4 +1,7 @@
 import numpy as np
+import torch
+import shutil
+from pathlib import Path
 
 def indice_splitter(dataset, valid_size, shuflle=True):
     num_data = len(dataset)
@@ -10,8 +13,9 @@ def indice_splitter(dataset, valid_size, shuflle=True):
     train_idx, valid_idx = indices[split:], indices[:split]
     return train_idx, valid_idx
 
-def save_checkpoint():
-    pass
-
-import numbers
-numbers.Number()
+def save_checkpoint(state, is_best, path='./saved_model/', filename='checkpoint.pth'):
+    bpath = Path(path)
+    fpath = bpath.joinpath(filename)
+    torch.save(state, fpath)
+    if is_best:
+        shutil.copyfile(fpath, bpath.joinpath('model_best.pth'))
