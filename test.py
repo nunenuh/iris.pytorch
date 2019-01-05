@@ -21,7 +21,7 @@ NUM_EPOCH = 100
 
 path = 'dataset/iris.data'
 feature_cols = ['sepal_length', 'sepal_width','petal_length','petal_witdh']
-target_cols = ['class']
+target_cols = ['species']
 CLAZZ = ["Iris-setosa", "Iris-versicolor", "Iris-virginica"]
 
 iris_dataset = dataset.IrisDataset(
